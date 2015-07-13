@@ -31,9 +31,23 @@ string getDifficulty() {
 		cout << "That's not valid! Please make sure you spelled the difficulty right and capitalized the first letter only." << endl;
 		cin >> difficulty;
 	}
-	cout << difficulty << endl;
+	cout << "You chose: " << difficulty << "." << endl;
+	return difficulty;
+}
+string getUserChoice() {
+	string userChoice = "";
+	cout << "Rock, Paper, Scissors, Lizard, or Spock?" << endl;
+	cin >> userChoice;
+	while((userChoice != "Rock") && (userChoice != "Paper") && (userChoice != "Scissors") && (userChoice != "Lizard") && (userChoice != "Spock")) {
+		cout << "That's not valid! Please make sure you spelled the choice right and capitalized the first letter only." << endl;
+		cin >> userChoice;
+	}
+	cout << "You chose: " << userChoice << "." << endl;
+	return userChoice;
 }
 
 int main() {
 	string difficulty = getDifficulty();
+	cout << endl << endl;
+	string userChoice = getUserChoice();
 }

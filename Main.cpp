@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <time.h>
 
 using namespace std;
 
@@ -61,9 +62,21 @@ string getUserChoice() {
 	return userChoice;
 }
 
+string getCompChoice(string difficulty, string userChoice) {
+	srand(time(NULL));
+	string comp = "";
+	if(difficulty == "easy") {
+		comp = compChoices[rand() % 5];
+		cout << "The computer chose: " << comp << "." << endl;
+		return comp;
+	}
+}
+
 int main() {
 	string difficulty = getDifficulty();
 	cout << endl;
 	string userChoice = getUserChoice();
+	cout << endl;
+	string compChoice = getCompChoice(difficulty, userChoice);
 	cout << endl;
 }

@@ -21,7 +21,7 @@
 
 using namespace std;
 
-void getDifficulty() {
+string getDifficulty() {
 	//Ask the user to specify difficulty level
 	string difficulty = "";
 	cout << "What difficulty level would you like?" << endl;
@@ -35,5 +35,5 @@ void getDifficulty() {
 }
 
 int main() {
-	getDifficulty();
+	string difficulty = getDifficulty();
 }

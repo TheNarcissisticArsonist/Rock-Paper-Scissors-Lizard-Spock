@@ -12,7 +12,7 @@
  * Hard			The computer removes one of two losing options based on yours
  * Impossible	The computer has a 100% chance of winning.
  *
- * It's impossible, right?
+ * It's impossible, right?gj
  */
 
 
@@ -21,7 +21,7 @@
 
 using namespace std;
 
-int main() {
+void getDifficulty() {
 	//Ask the user to specify difficulty level
 	string difficulty = "";
 	cout << "What difficulty level would you like?" << endl;
@@ -32,5 +32,8 @@ int main() {
 		cin >> difficulty;
 	}
 	cout << difficulty << endl;
+}
 
+int main() {
+	getDifficulty();
 }

@@ -21,26 +21,41 @@
 
 using namespace std;
 
+string compChoices[] = {"Rock", "Paper", "Scissors", "Lizard", "Spock"};
+
+string toLowercase(string text) {
+	for(int i=0; i<text.length(); i++) {
+		if(text[i] < 91) {
+			text[i] += 32;
+		}
+	}
+	return text;
+}
+
 string getDifficulty() {
 	//Ask the user to specify difficulty level
 	string difficulty = "";
 	cout << "What difficulty level would you like?" << endl;
 	cout << "Easy, Hard, or Impossible?" << endl;
 	cin >> difficulty;
-	while((difficulty != "Easy") && (difficulty != "Hard") && (difficulty != "Impossible")) {
-		cout << "That's not valid! Please make sure you spelled the difficulty right and capitalized the first letter only." << endl;
+	difficulty = toLowercase(difficulty);
+	while((difficulty != "easy") && (difficulty != "hard") && (difficulty != "impossible")) {
+		cout << "That's not valid! Please make sure you spelled the difficulty right." << endl;
 		cin >> difficulty;
+		difficulty = toLowercase(difficulty);
 	}
 	cout << "You chose: " << difficulty << "." << endl;
 	return difficulty;
 }
 string getUserChoice() {
 	string userChoice = "";
-	cout << "Rock, Paper, Scissors, Lizard, or Spock?" << endl;
+	cout << "Rock, paper, scissors, lizard, or Spock?" << endl;
 	cin >> userChoice;
-	while((userChoice != "Rock") && (userChoice != "Paper") && (userChoice != "Scissors") && (userChoice != "Lizard") && (userChoice != "Spock")) {
-		cout << "That's not valid! Please make sure you spelled the choice right and capitalized the first letter only." << endl;
+	userChoice = toLowercase(userChoice);
+	while((userChoice != "rock") && (userChoice != "paper") && (userChoice != "scissors") && (userChoice != "lizard") && (userChoice != "spock")) {
+		cout << "That's not valid! Please make sure you spelled the choice right." << endl;
 		cin >> userChoice;
+		userChoice = toLowercase(userChoice);
 	}
 	cout << "You chose: " << userChoice << "." << endl;
 	return userChoice;
@@ -48,6 +63,7 @@ string getUserChoice() {
 
 int main() {
 	string difficulty = getDifficulty();
-	cout << endl << endl;
+	cout << endl;
 	string userChoice = getUserChoice();
+	cout << endl;
 }

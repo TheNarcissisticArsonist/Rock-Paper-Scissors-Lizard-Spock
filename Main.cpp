@@ -33,17 +33,42 @@ void toLowercase(string &text) {
 int getDifficulty() {
 	cout << "What difficulty would you like to play?" << endl;
 	cout << "Easy, hard, or impossible?" << endl;
-	string myChoice;
-	cin >> myChoice;
-	toLowercase(myChoice);
-	if(myChoice == "easy") {
+	string text;
+	cin >> text;
+	toLowercase(text);
+	if(text == "easy") {
 		return 1;
 	}
-	else if(myChoice == "hard") {
+	else if(text == "hard") {
 		return 2;
 	}
-	else if(myChoice == "impossible") {
+	else if(text == "impossible") {
 		return 3;
+	}
+	else {
+		return 999;
+	}
+}
+int getUserChoice() {
+	cout << "What do you play?" << endl;
+	cout << "Rock, paper, scissors, lizard, or Spock?" << endl;
+	string text;
+	cin >> text;
+	toLowercase(text);
+	if(text == "rock") {
+		return 1;
+	}
+	else if(text == "paper") {
+		return 2;
+	}
+	else if(text == "scissors") {
+		return 3;
+	}
+	else if(text == "lizard") {
+		return 4;
+	}
+	else if(text == "spock") {
+		return 5;
 	}
 	else {
 		return 999;
@@ -54,7 +79,8 @@ int main() {
 	int difficulty = getDifficulty();
 	cout << "You chose to play on difficulty level " << difficulty << "." << endl;
 	cout << endl;
-	//int myChoice = getUserChoice();
+	int userChoice = getUserChoice();
+	cout << "You chose play option " << userChoice << "." << endl;
 	cout << endl;
 	//int compChoice = getCompChoice(myChoice, difficulty);
 	cout << endl;

@@ -50,7 +50,7 @@ int getDifficulty() {
 	}
 }
 int getUserChoice() {
-	cout << "What do you play?" << endl;
+	cout << "What do you playg?" << endl;
 	cout << "Rock, paper, scissors, lizard, or Spock?" << endl;
 	string text;
 	cin >> text;
@@ -74,14 +74,21 @@ int getUserChoice() {
 		return 999;
 	}
 }
+int getCompChoice(int userChoice, int difficulty) {
+	srand(time(NULL));
+	if(difficulty == 1) {
+		return rand() % 5 + 1;
+	}
+}
 
 int main() {
 	int difficulty = getDifficulty();
 	cout << "You chose to play on difficulty level " << difficulty << "." << endl;
 	cout << endl;
 	int userChoice = getUserChoice();
-	cout << "You chose play option " << userChoice << "." << endl;
+	cout << "You played " << userChoice << "." << endl;
 	cout << endl;
-	//int compChoice = getCompChoice(myChoice, difficulty);
+	int compChoice = getCompChoice(userChoice, difficulty);
+	cout << "The computer played " << compChoice << "." << endl;
 	cout << endl;
 }

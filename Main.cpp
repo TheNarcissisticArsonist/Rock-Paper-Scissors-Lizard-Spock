@@ -142,7 +142,57 @@ int getCompChoice(int userChoice, int difficulty) {
 		return tempChoice;
 	}
 }
-
+bool tied(int userChoice, int compChoice) {
+	if(userChoice == compChoice) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+void endingMessage(int winner, int loser) {
+	switch(winner) {
+		case 1:
+			if(loser == 3) {
+				cout << "Rock crushes scissors." << endl;
+			}
+			else {
+				cout << "Rock crushes lizard." << endl;
+			}
+			break;
+		case 2:
+			if(loser == 1) {
+				cout << "Paper covers rock." << endl;
+			}
+			else {
+				cout << "Paper disproves Spock." << endl;
+			}
+			break;
+		case 3:
+			if(loser == 2) {
+				cout << "Scissors cut paper." << endl;
+			}
+			else {
+				cout << "Scissors decapitate lizard." << endl;
+			}
+			break;
+		case 4:
+			if(loser == 2) {
+				cout << "Lizard eats paper." << endl;
+			}
+			else {
+				cout << "Lizard poisons Spock." << endl;
+			}
+			break;
+		case 5:
+			if(loser == 1) {
+				cout << "Spock vaporizes rock." << endl;
+			}
+			else {
+				cout << "Spock smashes scissors." << endl;
+			}
+	}
+}
 int main() {
 	int difficulty = getDifficulty();
 	cout << "You chose to play on difficulty level " << difficulty << "." << endl;
@@ -153,4 +203,15 @@ int main() {
 	int compChoice = getCompChoice(userChoice, difficulty);
 	cout << "The computer played " << compChoice << "." << endl;
 	cout << endl;
+	if(tied(userChoice, compChoice)) {
+		cout << "It's a tie!" << endl;
+	}
+	else if(willCompWin(compChoice, userChoice)) {
+		cout << "The computer wins!" << endl;
+		endingMessage(compChoice, userChoice);
+	}
+	else {
+		cout << "You win!" << endl;
+		endingMessage(userChoice, compChoice);
+	}
 }

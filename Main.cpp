@@ -193,7 +193,7 @@ void endingMessage(int winner, int loser) {
 			}
 	}
 }
-int main() {
+void playGame() {
 	int difficulty = getDifficulty();
 	cout << "You chose to play on difficulty level " << difficulty << "." << endl;
 	cout << endl;
@@ -214,4 +214,15 @@ int main() {
 		cout << "You win!" << endl;
 		endingMessage(userChoice, compChoice);
 	}
+	cout << "Play again? yes/no" << endl;
+	string playAgain;
+	cin >> playAgain;
+	toLowercase(playAgain);
+	if(playAgain == "yes") {
+		playGame();
+	}
+}
+
+int main() {
+	playGame();
 }

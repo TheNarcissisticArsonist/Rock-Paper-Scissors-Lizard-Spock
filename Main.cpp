@@ -24,13 +24,12 @@ using namespace std;
 
 string compChoices[] = {"Rock", "Paper", "Scissors", "Lizard", "Spock"};
 
-string toLowercase(string &text) {
+void toLowercase(string &text) {
 	for(int i=0; i<text.length(); i++) {
 		if(text[i] < 91) {
 			text[i] += 32;
 		}
 	}
-	return text;
 }
 
 string getDifficulty() {
@@ -43,7 +42,7 @@ string getDifficulty() {
 	while((difficulty != "easy") && (difficulty != "hard") && (difficulty != "impossible")) {
 		cout << "That's not valid! Please make sure you spelled the difficulty right." << endl;
 		cin >> difficulty;
-		difficulty = toLowercase(difficulty);
+		toLowercase(difficulty);
 	}
 	cout << "You chose: " << difficulty << "." << endl;
 	return difficulty;
@@ -52,11 +51,11 @@ string getUserChoice() {
 	string userChoice = "";
 	cout << "Rock, paper, scissors, lizard, or Spock?" << endl;
 	cin >> userChoice;
-	userChoice = toLowercase(userChoice);
+	toLowercase(userChoice);
 	while((userChoice != "rock") && (userChoice != "paper") && (userChoice != "scissors") && (userChoice != "lizard") && (userChoice != "spock")) {
 		cout << "That's not valid! Please make sure you spelled the choice right." << endl;
 		cin >> userChoice;
-		userChoice = toLowercase(userChoice);
+		toLowercase(userChoice);
 	}
 	cout << "You chose: " << userChoice << "." << endl;
 	return userChoice;

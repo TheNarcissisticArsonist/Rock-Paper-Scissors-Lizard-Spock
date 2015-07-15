@@ -74,10 +74,63 @@ int getUserChoice() {
 		return 999;
 	}
 }
+bool willCompWin(int compChoice, int userChoice) {
+	switch(compChoice) {
+		case 1:
+			if(userChoice == 1 || userChoice == 2 || userChoice == 5) {
+				return false;
+			}
+			else {
+				return true;
+			}
+			break;
+		case 2:
+			if(userChoice == 2 || userChoice == 3 || userChoice == 4) {
+				return false;
+			}
+			else {
+				return true;
+			}
+			break;
+		case 3:
+			if(userChoice == 1 || userChoice == 3 || userChoice == 5) {
+				return false;
+			}
+			else {
+				return true;
+			}
+			break;
+		case 4:
+			if(userChoice == 1 || userChoice == 3 || userChoice == 4) {
+				return false;
+			}
+			else {
+				return true;
+			}
+			break;
+		case 5:
+			if(userChoice == 2 || userChoice == 4 || userChoice == 5) {
+				return false;
+			}
+			else {
+				return true;
+			}
+			break;
+	}
+}
 int getCompChoice(int userChoice, int difficulty) {
 	srand(time(NULL));
 	if(difficulty == 1) {
 		return rand() % 5 + 1;
+	}
+	else if(difficulty == 2) {
+		int tempChoice = rand() % 5 + 1;
+		cout << tempChoice << endl;
+		if(!willCompWin(tempChoice, userChoice)) {
+			tempChoice = rand() % 5 + 1;
+			cout << tempChoice << endl;
+		}
+		return tempChoice;
 	}
 }
 

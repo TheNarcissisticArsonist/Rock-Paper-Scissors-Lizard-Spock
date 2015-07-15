@@ -24,7 +24,7 @@ using namespace std;
 
 string compChoices[] = {"Rock", "Paper", "Scissors", "Lizard", "Spock"};
 
-string toLowercase(string text) {
+string toLowercase(string &text) {
 	for(int i=0; i<text.length(); i++) {
 		if(text[i] < 91) {
 			text[i] += 32;
@@ -39,7 +39,7 @@ string getDifficulty() {
 	cout << "What difficulty level would you like?" << endl;
 	cout << "Easy, Hard, or Impossible?" << endl;
 	cin >> difficulty;
-	difficulty = toLowercase(difficulty);
+	toLowercase(difficulty);
 	while((difficulty != "easy") && (difficulty != "hard") && (difficulty != "impossible")) {
 		cout << "That's not valid! Please make sure you spelled the difficulty right." << endl;
 		cin >> difficulty;

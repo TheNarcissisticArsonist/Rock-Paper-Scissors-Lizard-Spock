@@ -50,7 +50,7 @@ int getDifficulty() {
 	}
 }
 int getUserChoice() {
-	cout << "What do you playg?" << endl;
+	cout << "What do you play?" << endl;
 	cout << "Rock, paper, scissors, lizard, or Spock?" << endl;
 	string text;
 	cin >> text;

@@ -132,6 +132,15 @@ int getCompChoice(int userChoice, int difficulty) {
 		}
 		return tempChoice;
 	}
+	else if(difficulty == 3) {
+		int tempChoice = rand() % 5 + 1;
+		cout << tempChoice << endl;
+		while(!willCompWin(tempChoice, userChoice)) {
+			tempChoice = rand() % 5 + 1;
+			cout << tempChoice << endl;
+		}
+		return tempChoice;
+	}
 }
 
 int main() {

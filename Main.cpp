@@ -9,7 +9,7 @@
  *
  * Difficulty:
  * Easy			The computer guesses randomly
- * Hard			The computer removes one of two losing options based on yours
+ * Hard			The computer gets two tries
  * Impossible	The computer has a 100% chance of winning.
  *
  * It's impossible, right?gj
@@ -68,6 +68,9 @@ string getCompChoice(string difficulty, string userChoice) {
 		comp = compChoices[rand() % 5];
 		cout << "The computer chose: " << comp << "." << endl;
 		return comp;
+	}
+	else if(difficulty == "hard") {
+
 	}
 }
 

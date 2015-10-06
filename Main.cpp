@@ -116,6 +116,8 @@ bool willCompWin(int compChoice, int userChoice) {
 				return true;
 			}
 			break;
+		default:
+			return false;
 	}
 }
 int getCompChoice(int userChoice, int difficulty) {
@@ -140,6 +142,9 @@ int getCompChoice(int userChoice, int difficulty) {
 			cout << tempChoice << endl;
 		}
 		return tempChoice;
+	}
+	else {
+		return 999;
 	}
 }
 bool tied(int userChoice, int compChoice) {
